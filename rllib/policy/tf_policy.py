@@ -150,7 +150,7 @@ class TFPolicy(Policy):
         self._loss_input_dict = None
         self.exploration_info = self.exploration.get_info()
         self._timestep = timestep if timestep is not None else \
-            tf.placeholder(tf.int32, (), name="timestep")
+            tf.placeholder(tf.int64, (), name="timestep")
 
         if loss is not None:
             self._initialize_loss(loss, loss_inputs)
